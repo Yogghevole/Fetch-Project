@@ -61,20 +61,44 @@ const request = async() => {
 
                 const content3 = document.createElement('div');
                 content3.classList.add('content3');
-                content3.textContent = element.volumeInfo.language;
-                content3.textContent = element.volumeInfo.title;
-                content3.textContent = element.saleInfo.saleability;
-                content3.textContent = element.volumeInfo.description;
-                content3.textContent = element.volumeInfo.pageCount;
-                content3.textContent = element.volumeInfo.publishedDate;
+                line3.append(content3);
+
+                const language = document.createElement('p');
+                language.textContent = element.volumeInfo.language;
+                content3.append(language);
+
+                const title = document.createElement('p');
+                title.textContent = element.volumeInfo.title;
+                content3.append(title);
+
+                const saleability = document.createElement('p');
+                saleability.textContent = element.saleInfo.saleability;
+                content3.append(saleability);
+
+                const description = document.createElement('p');
+                description.textContent = element.volumeInfo.description;
+                content3.append(description);
+
+                const pageCount = document.createElement('p');
+                pageCount.textContent = element.volumeInfo.pageCount;
+                content3.append(pageCount);
+
+                const publishedDate = document.createElement('p');
+                publishedDate.textContent = element.volumeInfo.publishedDate;
+                content3.append(publishedDate);
 
                 const thumbnail = document.createElement('img');
                 content3.append(thumbnail);
                 thumbnail.src = element.volumeInfo.imageLinks.thumbnail;
 
-                content3.textContent = element.volumeInfo.authors;
-                content3.textContent = element.accessInfo.country;
-                line3.append(content3);
+                const authors = document.createElement('p');
+                authors.textContent = element.volumeInfo.authors;
+                content3.append(authors)
+
+                const country = document.createElement('p');
+                country.textContent = element.accessInfo.country;
+                content3.append(country);
+
             });
         }
     } catch (error) {
